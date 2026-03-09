@@ -4,7 +4,8 @@
 ```lua
 getgenv().Config = {
     RemoveChat = true,
-    ReduceLag = true
+    ReduceLag = true,
+    ProServerFinder = true
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IcantAffordSynapse/AssassinOptimizer/refs/heads/main/Source.lua"))()
