@@ -1,5 +1,5 @@
 -- Assassin Optimizer
--- 09/03/2026
+-- 11/03/2026
 
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
@@ -9,9 +9,48 @@ local Cursor = ""
 
 if getgenv().Config.ReduceLag then
     spawn(function()
-        for i, v in pairs(getgc(true)) do
-            if type(v) == "function" and getinfo(v).name == "C1__" then
-                debug.setconstant(v, 1, 0)
+        if identifyexecutor() == "Xeno" then
+            local gui = Instance.new("ScreenGui")
+            gui.Name = "UnsupportedUI"
+            gui.ResetOnSpawn = false
+            gui.Parent = game:GetService("CoreGui")
+
+            local frame = Instance.new("Frame")
+            frame.Size = UDim2.new(0, 300, 0, 140)
+            frame.Position = UDim2.new(0.5, -150, 0.5, -70)
+            frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+            frame.BorderSizePixel = 0
+            frame.Parent = gui
+
+            local text = Instance.new("TextLabel")
+            text.Size = UDim2.new(1, -20, 0, 60)
+            text.Position = UDim2.new(0, 10, 0, 10)
+            text.BackgroundTransparency = 1
+            text.Text = "ReduceLag is not supported on Xeno executor."
+            text.TextColor3 = Color3.new(1,1,1)
+            text.TextWrapped = true
+            text.TextScaled = true
+            text.Font = Enum.Font.SourceSansBold
+            text.Parent = frame
+
+            local button = Instance.new("TextButton")
+            button.Size = UDim2.new(0, 100, 0, 35)
+            button.Position = UDim2.new(0.5, -50, 1, -45)
+            button.Text = "OK"
+            button.BackgroundColor3 = Color3.fromRGB(60,60,60)
+            button.TextColor3 = Color3.new(1,1,1)
+            button.Font = Enum.Font.SourceSansBold
+            button.TextScaled = true
+            button.Parent = frame
+
+            button.MouseButton1Click:Connect(function()
+                gui:Destroy()
+            end)
+        else
+            for i, v in pairs(getgc(true)) do
+                if type(v) == "function" and getinfo(v).name == "C1__" then
+                    debug.setconstant(v, 1, 0)
+                end
             end
         end
     end)
@@ -209,6 +248,8 @@ if getgenv().Config.ProServerFinder then
 
                 AddServer(jobId, players)
             end
+
+            
         end
 
         spawn(function()
