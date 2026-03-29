@@ -248,8 +248,6 @@ if getgenv().Config.ProServerFinder then
 
                 AddServer(jobId, players)
             end
-
-            
         end
 
         spawn(function()
