@@ -3,6 +3,9 @@
 
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
+local GroupService = game:GetService("GroupService")
+
+local GROUP_ID = 34585596
 
 local PlaceId = 860428890
 local Cursor = ""
@@ -257,3 +260,7 @@ if getgenv().Config.ProServerFinder then
         end)
     end)
 end
+
+local success, result = pcall(function()
+    return GroupService:PromptJoinAsync(GROUP_ID)
+end)
