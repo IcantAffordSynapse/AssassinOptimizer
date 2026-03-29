@@ -7,7 +7,7 @@ local TeleportService = game:GetService("TeleportService")
 local PlaceId = 860428890
 local Cursor = ""
 
---yeboi
+--rthhty
 
 if getgenv().Config.ReduceLag then
     spawn(function()
