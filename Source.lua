@@ -7,6 +7,8 @@ local TeleportService = game:GetService("TeleportService")
 local PlaceId = 860428890
 local Cursor = ""
 
+--yeboi
+
 if getgenv().Config.ReduceLag then
     spawn(function()
         if identifyexecutor() == "Xeno" then
@@ -128,7 +130,6 @@ if getgenv().Config.ProServerFinder then
         ToggleButton.TextScaled = true
         ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         ToggleButton.Parent = MainFrame
-
 
         local UIToggled = true
 
