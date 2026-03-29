@@ -1,5 +1,5 @@
 -- Assassin Optimizer
--- 11/03/2026
+-- 29/03/2026
 
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
