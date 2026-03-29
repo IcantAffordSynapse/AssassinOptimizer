@@ -7,8 +7,6 @@ local TeleportService = game:GetService("TeleportService")
 local PlaceId = 860428890
 local Cursor = ""
 
---rthhty
-
 if getgenv().Config.ReduceLag then
     spawn(function()
         if identifyexecutor() == "Xeno" then
